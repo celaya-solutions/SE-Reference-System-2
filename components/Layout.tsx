@@ -9,7 +9,10 @@ import {
   Menu, 
   X,
   Leaf,
-  Settings
+  Settings,
+  Mail,
+  Globe,
+  Fingerprint
 } from 'lucide-react';
 import { resetData } from '../lib/storage';
 
@@ -87,10 +90,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="flex flex-1 relative max-w-screen-2xl mx-auto w-full">
         {/* Sidebar */}
         <aside className={`
-          fixed inset-y-0 left-0 z-30 w-64 bg-white border-r border-slate-200 transform transition-transform duration-200 lg:relative lg:translate-x-0
+          fixed inset-y-0 left-0 z-30 w-64 bg-white border-r border-slate-200 transform transition-transform duration-200 lg:relative lg:translate-x-0 flex flex-col
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         `}>
-          <nav className="p-4 space-y-2 mt-16 lg:mt-0">
+          <nav className="p-4 space-y-2 flex-1 mt-16 lg:mt-0">
             {navigation.map((item) => (
               <SidebarItem 
                 key={item.to}
@@ -111,6 +114,37 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </div>
             </div>
           </nav>
+
+          {/* Celaya Solutions Branding - Humble & Quiet */}
+          <div className="p-6 border-t border-slate-100 bg-slate-50/50">
+            <div className="flex items-center gap-2 text-slate-400 mb-2">
+              <Fingerprint size={14} />
+              <span className="text-[10px] font-bold uppercase tracking-widest">Lab Provenance</span>
+            </div>
+            <div className="space-y-3">
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                An instrument by <strong className="text-slate-900">Celaya Solutions</strong>. Focused on emergent systems and local-first intelligence.
+              </p>
+              <div className="flex items-center gap-3">
+                <a 
+                  href="https://celayasolutions.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-schneider transition-colors"
+                  title="celayasolutions.com"
+                >
+                  <Globe size={14} />
+                </a>
+                <a 
+                  href="mailto:hello@celayasolutions.com" 
+                  className="text-slate-400 hover:text-schneider transition-colors"
+                  title="hello@celayasolutions.com"
+                >
+                  <Mail size={14} />
+                </a>
+              </div>
+            </div>
+          </div>
         </aside>
 
         {/* Content */}
