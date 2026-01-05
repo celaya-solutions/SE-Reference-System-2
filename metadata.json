@@ -1,0 +1,7 @@
+{
+  "name": "Panel Wiring Reference Library",
+  "description": "An enterprise-grade internal reference tool for electrical panel wiring standards, emphasizing efficiency and sustainability.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
